@@ -1,4 +1,8 @@
-<div class="banner small" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @list.image_url %>)">
+<div  class="banner small"
+      <% if @list.photo.attached? %>
+      style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @list.photo.key %>')"
+      <% end %>
+    >
   <div class="container">
     <h1><%= @list.name %></h1>
   </div>

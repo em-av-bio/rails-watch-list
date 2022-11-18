@@ -1,6 +1,6 @@
 <%= simple_form_for(list) do |f| %>
   <%= f.input :name, class: "col-6 mb-3" %>
-  <%= f.input :image_url, class: "col-6 mb-3" %>
+  <%= f.input :photo, as: :file, class: "col-6 mb-3" %>
   <div class="d-flex justify-content-center">
     <%= f.button :submit, class: "btn btn-dark" %>
   </div>

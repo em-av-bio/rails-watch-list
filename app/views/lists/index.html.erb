@@ -10,11 +10,14 @@
   </div>
   <div class="cards py-5">
     <% @lists.each do |list| %>
-      <%= link_to list_path(list) do %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.image_url %>)">
-          <%= list.name %>
-        </div>
-      <% end %>
+     <div class="card-category"
+          <% if list.photo.attached? %>
+            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key %>')"
+          <% end %>
+          >
+        <%= link_to list.name, list_path(list) %>
+        <%= link_to "+", list_path(list), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "close" %>
+      </div>
     <% end %>
   </div>
 </div>
