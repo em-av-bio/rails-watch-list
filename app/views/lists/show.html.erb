@@ -1,0 +1,30 @@
+<div class="banner small" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @list.image_url %>)">
+  <div class="container">
+    <h1><%= @list.name %></h1>
+  </div>
+</div>
+
+<div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between border-bottom">
+    <h2>My bookmarks</h2>
+    <%= link_to "Add a bookmark", new_list_bookmark_path(@list), class: "btn btn-dark" %>
+  </div>
+  <div class="cards py-5">
+    <% @bookmarks.each do |bookmark| %>
+      <div class="card-bookmark">
+        <img src="<%= bookmark.movie.poster_url %>" alt="<%= bookmark.movie.title %>" />
+        <div class="card__content">
+          <h3>
+            <%= bookmark.movie.title %>
+            <span><%= bookmark.movie.rating %></span>
+          </h3>
+          <p><%= bookmark.movie.overview %></p>
+        </div>
+        <div class="d-flex align-items-center justify-content-between border-top p-3">
+          <%= bookmark.comment %>
+          <%= link_to "Delete", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

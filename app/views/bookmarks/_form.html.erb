@@ -1,0 +1,7 @@
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :comment, class: "col-6 mb-3" %>
+  <%= f.association :movie, class: "col-6 mb-3" %>
+  <div class="d-flex justify-content-center">
+    <%= f.button :submit, class: "btn btn-dark" %>
+  </div>
+<% end %>

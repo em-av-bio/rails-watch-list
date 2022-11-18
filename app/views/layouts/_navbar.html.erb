@@ -1,0 +1,7 @@
+<nav class="d-flex justify-content-between align-items-center p-3 border-bottom bg-white">
+  <%= image_tag "movies.svg", alt: "My lists", width: 40 %>
+  <ul class="nav">
+    <li class="nav-item"><%= link_to "My lists", lists_path, class: 'p-3 text-reset' %></li>
+    <li class="nav-item"><%= link_to "New list", new_list_path, class: 'p-3 text-reset' %></li>
+  </ul>
+</nav>
