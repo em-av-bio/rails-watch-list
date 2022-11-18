@@ -16,7 +16,10 @@
           <% end %>
           >
         <%= link_to list.name, list_path(list) %>
-        <%= link_to "+", list_path(list), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "close" %>
+        <%= link_to list_path(list), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "close" do %>
+          <span>×</span>
+          <p>Delete</p>
+        <% end %>
       </div>
     <% end %>
   </div>
