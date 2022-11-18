@@ -7,7 +7,7 @@
 <div class="container py-5">
   <div class="d-flex align-items-center justify-content-between border-bottom">
     <h2>My bookmarks</h2>
-    <%= link_to "Add a bookmark", new_list_bookmark_path(@list), class: "btn btn-dark" %>
+    <%= link_to "Add a bookmark", "#addBookmark", class: "btn btn-dark" %>
   </div>
   <div class="cards py-5">
     <% @bookmarks.each do |bookmark| %>
@@ -26,5 +26,13 @@
         </div>
       </div>
     <% end %>
+  </div>
+  <div id="addBookmark" class="d-flex align-items-center justify-content-between border-bottom">
+    <h2>Add a bookmark</h2>
+  </div>
+  <div class="row justify-content-center py-5">
+    <div class="col-12 col-md-6 col-lg-4">
+      <%= render "bookmarks/form", bookmark: @bookmark, list: @list, movies: @movies %>
+    </div>
   </div>
 </div>

@@ -20,6 +20,8 @@ class ListsController < ApplicationController
 
   def show
     @bookmarks = Bookmark.where(list_id: @list)
+    @movies = Movie.all
+    @bookmark = Bookmark.new
   end
 
   private
