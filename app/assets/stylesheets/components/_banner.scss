@@ -5,6 +5,10 @@
   height: 50vh;
   filter: grayscale(1);
 
+  &.index {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), asset-url('hero.jpg');
+  }
+  
   &.small {
     height: 25vh;
   }
